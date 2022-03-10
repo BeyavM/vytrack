@@ -21,5 +21,11 @@ public class US10_Writing_Messages extends TestBase {
       Actions actions=new Actions(Driver.getDriver());
       actions.moveToElement(ActivitiesElement).perform();
       BrowserUtils.sleep(3);
+      // and user click to "Calendar Events"
+      WebElement CalendarEvents=Driver.getDriver().findElement(By.xpath("//span[text()='Calendar Events']"));
+      CalendarEvents.click();
+      //then user click to Create calendar Event
+      WebElement CreateCalendarEvents=Driver.getDriver().findElement(By.xpath("//a[@class='btn main-group btn-primary pull-right ']"));
+      CreateCalendarEvents.click();
    }
 }
