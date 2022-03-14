@@ -32,7 +32,7 @@ public class VytrackUtils {
         Driver.getDriver().findElement(By.tagName("button")).click();
     }
 
-    public static void loginAsStoreManger() {
+    public static void loginAsStoreManager() {
         //go to website
         Driver.getDriver().get(ConfigurationReader.getProperty("env"));
         // pass username
@@ -65,5 +65,14 @@ public class VytrackUtils {
         }
     }
 
+    public static void waitTillLoaderMaskDisappear() {
+        try {
+            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
+            WebElement loaderMask = Driver.getDriver().findElement(By.cssSelector("div[class='loader-mask shown']"));
+            wait.until(ExpectedConditions.invisibilityOf(loaderMask));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }
