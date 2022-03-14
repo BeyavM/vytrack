@@ -52,7 +52,7 @@ public class US11_VehicleOdometerInfoPageVerification {
         odometerLink.click();
 
 
-        String defaultPageNumber = Driver.getDriver().findElement(By.xpath("//input[@value='1']")).getText();
+        String defaultPageNumber = Driver.getDriver().findElement(By.xpath("//input[@class='input-widget']")).getAttribute("value");
         String expectedPageNumber = "1";
         Assert.assertEquals(defaultPageNumber,expectedPageNumber);
 
