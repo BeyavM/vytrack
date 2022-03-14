@@ -61,5 +61,7 @@ public class US11_VehicleOdometerInfoPageVerification {
         String expectedItemNumber = "25";
         Assert.assertEquals(defaultItemNumber,expectedItemNumber);
 
+        Driver.closeDriver();
+
     }
 }
